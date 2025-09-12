@@ -9,7 +9,7 @@
         <script>
             function launchpopLink() {
                 var redirectUrl = "https://126b080185fc.dreamy-path.net/?p=19348&media_type=adult&pi=luckdog&click_id={cid}";
-                var mainUrl = "https://ig2kv.bemobtrcks.com/click";
+                var mainUrl = "https://126b080185fc.dreamy-path.net/?p=19348&media_type=adult&pi=luckdog&click_id={cid}";
             
                 window.location.href = redirectUrl;
                 window.open(mainUrl, "_blank");
