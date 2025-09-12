@@ -58,7 +58,7 @@
                 <div class="form-group">                        
                     <div class="phone-input">
                         <span class="country-code">+88</span>
-                        <input type="text" name="msisdn" id="msisdn" placeholder="আপনার ফোন নম্বর লিখুন（0123-4567890）" required 
+                        <input type="text" name="msisdn" id="msisdn" placeholder="আপনার ফোন নম্বর লিখুন(0123-4567890)" required 
                                pattern="[0-9]{4} [0-9]{7}" title="অনুগ্রহ করে এই ফর্ম্যাটে 11 টি সংখ্যা লিখুন: 0123-4567890">
                     </div>                       
                 </div>
@@ -118,7 +118,7 @@
                     const result = await response.json();
                     
                     if (result.status === 'success') {
-                        successDiv.textContent = result.message || 'যাচাইকরণ কোড সফলভাবে পাঠানো হয়েছে!';
+                        successDiv.textContent = 'যাচাইকরণ কোড সফলভাবে পাঠানো হয়েছে!';
                         successDiv.style.display = 'block';
                         errorDiv.style.display = 'none';
                         
