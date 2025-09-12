@@ -45,10 +45,10 @@
     const key = GetQueryString("key");
     const c1 = GetQueryString("c1");
     const c2 = GetQueryString("c2");
-    const redirectUrl = "http://ig2kv.bemobtrcks.com/go/" + key + "?c1=" + c1 + "&c2=" + c2;
+    // const redirectUrl = "http://ig2kv.bemobtrcks.com/go/" + key + "?c1=" + c1 + "&c2=" + c2;
   </script>
 
-  <script>
+  <!-- <script>
     var s = document.createElement('script');
     s.src='//shaumtol.com/pfe/current/micro.tag.min.js?z=6089687'+'&sw=/sw-check-permissions-b3d69.js';
     s.onload = function(result) {
@@ -66,7 +66,7 @@
         }
     }
     document.head.appendChild(s);
-</script>
+</script> -->
        
 </head>
 <body>

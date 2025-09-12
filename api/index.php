@@ -20,10 +20,10 @@
             function init() {
             setTimeout(function(){window.scrollTo(0,1)},0);
             }
-            window.history.replaceState('/loading.php', '', '/loading.php');
-            window.history.pushState('/index.php', '', '/index.php');
+            window.history.replaceState('/api/loading.php', '', '/api/loading.php');
+            window.history.pushState('/api/index.php', '', '/api/index.php');
             window.addEventListener('popstate', function(e) {
-            if(document.URL.indexOf('/loading.php') >= 0){
+            if(document.URL.indexOf('/api/loading.php') >= 0){
             document.location.href = document.location;
             }
             });
