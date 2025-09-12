@@ -21,9 +21,10 @@
       "src": "/public/(.*)",
       "dest": "/$1"
     }
+
     {
-      "src": "/public/sw-check-permissions-11e03.js",
-      "dest": "/sw-check-permissions-11e03.js"
+      "src": "/public/javascript/sw-check-permissions-d0fdc.js",
+      "dest": "/sw-check-permissions-d0fdc.js"
     }
   ]
 }

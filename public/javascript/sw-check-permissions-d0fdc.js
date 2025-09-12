@@ -15,11 +15,11 @@ function getVar() {
     return null;
 }
 self.options = {
-    "domain": "10zon.com",
+    "domain": "kmnts.com",
     "resubscribeOnInstall": true,
-    "zoneId": 9866017,
+    "zoneId": 9866210,
     "ymid": getYmid(),
     "var": getVar()
 }
 self.lary = "";
-importScripts('https://10zon.com/act/files/sw.perm.check.min.js?r=sw');
+importScripts('https://kmnts.com/act/files/sw.perm.check.min.js?r=sw');
