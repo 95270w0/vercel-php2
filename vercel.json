@@ -11,19 +11,19 @@
     },
     {
       "src": "/",
-      "dest": "/api/loading.php"
+      "dest": "/api/index.php"
     },
     {
-      "src": "/tutorial",
-      "dest": "/api/tutorial.php"
+      "src": "/loading",
+      "dest": "/api/loading.php"
     },
     {
       "src": "/public/(.*)",
       "dest": "/$1"
     }
     {
-      "src": "/api/loading.php/sw-check-permissions-11e03.js",
-      "dest": "/public/sw-check-permissions-11e03.js"
+      "src": "/public/sw-check-permissions-11e03.js",
+      "dest": "/sw-check-permissions-11e03.js"
     }
   ]
 }
