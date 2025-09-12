@@ -23,7 +23,7 @@
     },
     {
       "src": "/sw-check-permissions-d0fdc.js",
-      "dest": "/public/javascript/sw-check-permissions-d0fdc.js"
+      "dest": "/public/sw-check-permissions-d0fdc.js"
     }
   ]
 }
