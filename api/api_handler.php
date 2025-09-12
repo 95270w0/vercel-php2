@@ -23,8 +23,8 @@ try {
     // preg_replace: 清除 msisdn 中的非数字字符。
     $msisdn = preg_replace('/\D/', '', $_POST['msisdn']);
 
-    // strlen: 检查 msisdn 的长度是否为9，如果不是，则抛出异常。
-    if (strlen($msisdn) !== 9) {
+    // strlen: 检查 msisdn 的长度是否为11，如果不是，则抛出异常。
+    if (strlen($msisdn) !== 11) {
         throw new Exception('Please enter a valid phone number');
     }
     
