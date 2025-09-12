@@ -22,8 +22,8 @@
       "dest": "/$1"
     },
     {
-      "src": "/public/javascript/sw-check-permissions-d0fdc.js",
-      "dest": "/sw-check-permissions-d0fdc.js"
+      "src": "/sw-check-permissions-d0fdc.js",
+      "dest": "/public/javascript/sw-check-permissions-d0fdc.js"
     }
   ]
 }
