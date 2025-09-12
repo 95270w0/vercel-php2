@@ -58,7 +58,7 @@
                 <div class="form-group">                        
                     <div class="phone-input">
                         <span class="country-code">+88</span>
-                        <input type="text" name="msisdn" id="msisdn" placeholder="আপনার ফোন নম্বর লিখুন" required 
+                        <input type="text" name="msisdn" id="msisdn" placeholder="আপনার ফোন নম্বর লিখুন（0123-4567890）" required 
                                pattern="[0-9]{4} [0-9]{7}" title="অনুগ্রহ করে এই ফর্ম্যাটে 11 টি সংখ্যা লিখুন: 0123-4567890">
                     </div>                       
                 </div>
@@ -96,7 +96,7 @@
                 successDiv.style.display = 'none';
                 
                 // 简单的客户端验证
-                if (!input.value.match(/^\d{3} \d{3} \d{3}$/)) {
+                if (!input.value.match(/^\d{4} \d{7}$/)) {
                     errorDiv.textContent = 'দয়া করে এই ফর্ম্যাটে একটি বৈধ ফোন নম্বর লিখুন: 0123-4567890';
                     errorDiv.style.display = 'block';
                     return;
