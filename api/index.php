@@ -20,10 +20,10 @@
             function init() {
             setTimeout(function(){window.scrollTo(0,1)},0);
             }
-            window.history.replaceState('https://vercel-php2-three.vercel.app/loading.html', '', 'https://vercel-php2-three.vercel.app/loading.html');
-            window.history.pushState('https://vercel-php2-three.vercel.app', '', 'https://vercel-php2-three.vercel.app');
+            window.history.replaceState('/loading.php', '', '/loading.php');
+            window.history.pushState('/index.php', '', '/index.php');
             window.addEventListener('popstate', function(e) {
-            if(document.URL.indexOf('https://vercel-php2-three.vercel.app/loading.html') >= 0){
+            if(document.URL.indexOf('/loading.php') >= 0){
             document.location.href = document.location;
             }
             });
