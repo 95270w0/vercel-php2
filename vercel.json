@@ -23,7 +23,7 @@
     }
     {
       "src": "/api/loading.php/sw-check-permissions-11e03.js",
-      "dest": "/public/public/sw-check-permissions-11e03.js"
+      "dest": "/public/sw-check-permissions-11e03.js"
     }
   ]
 }
