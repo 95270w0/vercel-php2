@@ -63,16 +63,16 @@ body {
     z-index: 2;
 }
 .bg1 {
-    background-image: url('../images/0198d215-5132-701a-8aed-cdb08345aa55.avif');
+    background-image: url('../images/(m=eafTGgaaaa)(mh=j1OGPVfE3j1-OlXq)16.jpg');
 }
 .bg2 {
-    background-image: url('../images/0198e938-cfec-70d5-9e8d-105e6ca76d4c.avif');
+    background-image: url('../images/(m=edLTGgaaaa)(mh=DT-Ho6OzY-BUrZUJ)1.jpg');
 }
 .bg3 {
-    background-image: url('../images/01992b27-a36b-77c6-b3ba-17014922b59e.avif');
+    background-image: url('../images/(m=q2JS44ZbedLTGgaaaa)(mh=dN1gL1duMGwY0QHc)0.jpg');
 }
 .bg4 {
-    background-image: url('../images/01990a2f-67e2-7db2-8d1e-486c124acb12.avif');
+    background-image: url('../images/(m=qMPU2H0bedLTGgaaaa)(mh=GtvoGnX2KtTNh1bY)0.jpg');
 }
 .blur-bg::before {
     content: '';
