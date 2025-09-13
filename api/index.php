@@ -66,7 +66,7 @@
                 <div class="form-group">                   
                     <div class="pin-input-container-pin">
                         <input type="text" name="pin" id="pin" class="pin-input blink" placeholder="4-সংখ্যার পিন লিখুন" 
-                               pattern="[0-9]{6}" title="অনুগ্রহ করে 6 টি সংখ্যা লিখুন" maxlength="6">
+                               pattern="[0-9]{6}" title="অনুগ্রহ করে 6 টি সংখ্যা লিখুন" maxlength="6" disabled>
                         <button type="submit" class="send-pin-btn" id="sendPinBtn">পিন পাঠান</button>
                     </div>                       
                 </div>             
