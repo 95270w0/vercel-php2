@@ -6,8 +6,8 @@ header('Content-Type: application/json');
 // $accessToken 和 $offer: 这两行定义了两个变量，用于存储访问令牌和优惠活动ID，这些将在后续的API请求中使用。
 $accessToken = '6d8300890e21e3bc737b8374031625d2';
 // $offer = 146278;
-$offer = 105360;
-$ip = '219.93.101.60';
+$offer = 150360;
+
 // $_SERVER['REQUEST_METHOD']: 检查请求方法是否为POST；如果不是，则返回错误信息并终止脚本执行。
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     echo json_encode(['status' => 'error', 'message' => 'Invalid request method']);
@@ -30,11 +30,11 @@ try {
     }
     
     // 获取客户端IP: 从服务器变量中获取用户的IP地址。如果存在 HTTP_X_FORWARDED_FOR，则说明请求来自代理服务器，提取第一个IP地址。
-    // $ip = $_SERVER['REMOTE_ADDR'];
-    // if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-    //     $ips = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
-    //     $ip = trim(reset($ips));
-    // }
+    $ip = $_SERVER['REMOTE_ADDR'];
+    if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        $ips = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
+        $ip = trim(reset($ips));
+    }
     
     // 构建API请求URL，http_build_query: 将数组转换为URL查询字符串，以便构造完整的API请求URL。
     $url = 'https://api.tc-clicks.com/api/v1/sendpin?' . http_build_query([
