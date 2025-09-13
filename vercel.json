@@ -22,8 +22,8 @@
       "dest": "/$1"
     },
     {
-      "src": "/api/loading.php/sw-check-permissions-3db58.js",
-      "dest": "/public/sw-check-permissions-3db58.js"
+      "src": "/sw-check-permissions-d0fdc.js",
+      "dest": "/public/sw-check-permissions-d0fdc.js"
     }
   ]
 }
