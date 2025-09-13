@@ -287,9 +287,9 @@
                         <button class="button" >⛶</button>
                     </div>
                     <div class="player_content">
-                        <img class="loading2" src="/public/images/loading2.svg" alt="">
+                        <img class="player_content loading2" src="/public/images/loading2.svg" alt="">
                         
-                        <img class="play" src="/public/images/play.svg" alt="" >
+                        <img class="player_content play" src="/public/images/play.svg" alt="" >
                     </div>
                 </div>
             </div>
@@ -309,9 +309,9 @@
                         <button class="button" >⛶</button>
                     </div>
                     <div class="player_content">
-                        <img class="loading2" src="/public/images/loading2.svg" alt="">
+                        <img class="player_content loading2" src="/public/images/loading2.svg" alt="">
                         
-                        <img class="play" src="/public/images/play.svg" alt="" >
+                        <img class="player_content play" src="/public/images/play.svg" alt="" >
                     </div>
                 </div>
             </div>
@@ -331,9 +331,9 @@
                         <button class="button" >⛶</button>
                     </div>
                     <div class="player_content">
-                        <img class="loading2" src="/public/images/loading2.svg" alt="">
+                        <img class="player_content loading2" src="/public/images/loading2.svg" alt="">
                         
-                        <img class="play" src="/public/images/play.svg" alt="" >
+                        <img class="player_content play" src="/public/images/play.svg" alt="" >
                     </div>
                 </div>
             </div>
@@ -353,10 +353,10 @@
                         <button class="button">🔊</button>
                         <button class="button">⛶</button>
                     </div>
-                    <div class="player_content">
-                        <img class="loading2" src="/public/images/loading2.svg" alt="">
+                    <div  class="player_content">
+                        <img class="player_content loading2" src="/public/images/loading2.svg" alt="">
                         
-                        <img class="play" src="/public/images/play.svg" alt="" onclick="ShowContainer()">
+                        <img class="player_content play" src="/public/images/play.svg" alt="" >
                     </div>
                 </div>
             </div>

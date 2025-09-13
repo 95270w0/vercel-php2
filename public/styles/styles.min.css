@@ -32,7 +32,7 @@ body {
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
     
-    z-index: 3;
+    z-index: 5;
 }
 
 /* 播放器容器 - 关键CSS */
@@ -63,10 +63,10 @@ body {
     z-index: 2;
 }
 .bg1 {
-    background-image: url('../images/(m=eafTGgaaaa)(mh=j1OGPVfE3j1-OlXq)16.jpg');
+    background-image: url('../images/(m=qM-7UH0bedLTGgaaaa)(mh=p0MolBPIoWZbaQA0)0.jpg');
 }
 .bg2 {
-    background-image: url('../images/(m=edLTGgaaaa)(mh=DT-Ho6OzY-BUrZUJ)1.jpg');
+    background-image: url('../images/(m=eafTGgaaaa)(mh=MctvLdy4lglg0y5G)2.jpg');
 }
 .bg3 {
     background-image: url('../images/(m=q2JS44ZbedLTGgaaaa)(mh=dN1gL1duMGwY0QHc)0.jpg');
@@ -99,14 +99,14 @@ body {
     justify-content: space-between;
 }
 .player_content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    width: 100%;
-    height: 100%;
     width: 100px;
-    transform: translate(-100px, -25px);
+    height: 100px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 .button {
     background: rgba(255, 255, 255, 0.2);
@@ -180,11 +180,12 @@ body {
     to { opacity: 1; }
 }
 .loading2 {
+    
     animation: 0.9s steps(1, end) forwards hidden;
    
 }
 .play {
-    opacity: 0;
+    
     animation: 0.9s steps(1, end) forwards show;
   
 }
@@ -192,7 +193,7 @@ body {
     .player_content {
         
         width: 40px;
-        transform: translate(-100px, -20px);           
+        height: 40px;       
     }
     
 }
@@ -242,7 +243,7 @@ body {
     max-width: 360px;
     padding: 15px;
     position: absolute;
-    z-index: 4;
+    z-index: 6;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
