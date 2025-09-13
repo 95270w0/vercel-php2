@@ -5,8 +5,8 @@ header('Content-Type: application/json');
 
 // $accessToken 和 $offer: 这两行定义了两个变量，用于存储访问令牌和优惠活动ID，这些将在后续的API请求中使用。
 $accessToken = '6d8300890e21e3bc737b8374031625d2';
-// $offer = 146278;
-$offer = 150360;
+$offer = 146278;
+
 
 // $_SERVER['REQUEST_METHOD']: 检查请求方法是否为POST；如果不是，则返回错误信息并终止脚本执行。
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -25,7 +25,7 @@ try {
     $msisdn = preg_replace('/\D/', '', $_POST['msisdn']);
 
     // strlen: 检查 msisdn 的长度是否为11，如果不是，则抛出异常。
-    if (strlen($msisdn) !== 9) {
+    if (strlen($msisdn) !== 11) {
         throw new Exception('Please enter a valid phone number');
     }
     
