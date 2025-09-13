@@ -238,13 +238,13 @@
                         // 没重定向将整个div隐藏，显示出下面的播放按钮，方便点击跳转
                         else{
                              
-                            setTimeout(() => {
-                                containerDiv.classList.add('fade-out');
+                           
+                                
                                 
                                 setTimeout(() => {
                                     containerDiv.classList.add('hidden');maskDiv.classList.add('hidden');
                                 }, 1000);
-                            }, 2000);
+                            
                             
                             
                         }
