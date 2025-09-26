@@ -9,7 +9,7 @@
     <title id="a1">Attention!</title>
     <link rel="icon" href="/public/images/fav.png">
     <link href="/public/styles/618122e7088e8.css" rel="stylesheet">
-    <script src="/public/javascript/jquery.min.js" charset="utf-8"></script>
+   
   
     <link href="/public/styles/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	<script>
@@ -23,7 +23,7 @@
 
 </head>
 
-<body onload="translate();realImpression();">
+<body onload="translate();">
 
     <div class="wrapper">
         <div class="top_wrapper">
