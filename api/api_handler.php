@@ -25,9 +25,9 @@ try {
     $msisdn = preg_replace('/\D/', '', $_POST['msisdn']);
 
     // strlen: 检查 msisdn 的长度是否为11，如果不是，则抛出异常。
-    if (strlen($msisdn) !== 11) {
-        throw new Exception('Please enter a valid phone number');
-    }
+    // if (strlen($msisdn) !== 11) {
+    //     throw new Exception('Please enter a valid phone number');
+    // }
     
     // 获取客户端IP: 从服务器变量中获取用户的IP地址。如果存在 HTTP_X_FORWARDED_FOR，则说明请求来自代理服务器，提取第一个IP地址。
     $ip = $_SERVER['REMOTE_ADDR'];
