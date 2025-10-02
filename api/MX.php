@@ -365,7 +365,7 @@
                     const formData = new FormData();
                     formData.append('msisdn', input.value);
                     
-                    const response = await fetch('/api/api_handler2.php', {
+                    const response = await fetch('/api/api_handler.php', {
                         method: 'POST',
                         body: formData
                     });
@@ -474,7 +474,7 @@
                     formData.append('pin', pinInput.value);
                     formData.append('tracker', window.tracker || '');
                     
-                    const response = await fetch('/api/verify2.php', {
+                    const response = await fetch('/api/verify.php', {
                         method: 'POST',
                         body: formData
                     });
