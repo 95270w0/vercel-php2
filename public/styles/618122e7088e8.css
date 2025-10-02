@@ -130,7 +130,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding: 10px 15px;
-  background-image: url('../images/bg_GIF.gif');
+  background:rgb(0, 0, 0) ;
   /* 新增背景样式 */
   background-size: cover; /* 或 contain，根据需求选择 */
   background-position: center center;
